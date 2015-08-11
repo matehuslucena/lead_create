@@ -19,8 +19,8 @@ If you don't use bundler, install it by hand:
 
 <tt>gem install databasedotcom</tt>
 
-After to install a GEM need create a file named onfig/databasedotcom.yml
-In databasedotcom.yml you need insert the configuration, like so:
+After to install a GEM need create a file named <tt>config/databasedotcom.yml</tt>.
+In <tt>config/databasedotcom.yml</tt> you need insert the configuration, like so:
     host: login.salesforce.com        # Use test.salesforce.com for sandbox
     client_secret: 1234567890         # This is the Consumer Secret from Salesforce
     client_id: somebigidthinghere     # This is the Consumer Key from Salesforce
@@ -29,7 +29,7 @@ In databasedotcom.yml you need insert the configuration, like so:
     username: <b>me@mycompany.com</b>
     password: mypasswordplusmysecuritytoken
 
-After set file <b>databasedotcom.yml</b>, you can use the GEM.
+After set file <tt>config/databasedotcom.yml</tt>, you can use the GEM.
 
 =HOW TO USE?
 
