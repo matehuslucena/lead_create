@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'lead_create'
-  s.version     = '0.0.16'
+  s.version     = '1.0.0'
   s.date        = '2015-08-10'
   s.summary     = 'Lead create'
   s.description = 'A gem to create a lead in the salesforce'
