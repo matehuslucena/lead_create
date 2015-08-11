@@ -19,13 +19,15 @@ class LeadCreate
 
   private
   def self.connect
+    unless File.exist?('config/databasedotcom.yml')
+      raise 'Please create file \'/config/databasedotcom.yml\''
+    end
     @client = Databasedotcom::Client.new('config/databasedotcom.yml')
     file = YAML.load_file('config/databasedotcom.yml')
     @client.authenticate :username => file['username'], :password => file['password']
   end
 
   def self.take_lead
-    connect
     @client.materialize('Lead')
   end
 
