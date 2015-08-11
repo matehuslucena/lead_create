@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'lead_create'
-  s.version     = '0.0.6'
+  s.version     = '0.0.16'
   s.date        = '2015-08-10'
   s.summary     = 'Lead create'
   s.description = 'A gem to create a lead in the salesforce'
@@ -11,4 +11,6 @@ Gem::Specification.new do |s|
   s.license       = 'MIT'
 
   s.add_dependency 'databasedotcom', '~> 1.3'
+
+  s.add_development_dependency 'rspec', '~> 3.3'
 end
