@@ -1,0 +1,21 @@
+== README
+
+This project was building as a way to study ROR and his technologies.
+
+This project uses:
+
+* Ruby: 2.0.0
+
+* Rails: 4.2.1
+
+* Devise: 3.5.1
+
+* Bootstrap-sass: 3.2.0
+
+* Rspec-rails: 3.3.2
+
+* factory_girl_rails: 4.5.0
+
+* Database: Sqlite3
+
+This application are hosted in microbloglucena.herokuapp.com
