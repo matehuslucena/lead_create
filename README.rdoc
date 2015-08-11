@@ -14,10 +14,14 @@ lead_create is a gem to enable ruby applications to integrate with the SalesForc
 If you use bundler, simply list it in your Gemfile, like so:
 
 <h3>gem 'databasedotcom'</h3>
+word
+    displays word in a code font
 
 If you don't use bundler, install it by hand:
 
 <h3>gem install databasedotcom</h3>
+word
+    displays word in a code font 
 
 After to install a GEM need create a file named onfig/databasedotcom.yml
 In databasedotcom.yml you need insert the configuration, like so:
