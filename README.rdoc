@@ -33,7 +33,7 @@ After set file <b>databasedotcom.yml</b>, you can use the GEM.
 
 =HOW TO USE?
 
-If you can see the list of leads you have you can do this: <b>LeadCreate.list_leads</b>
-If you can save a new lead in your salesforce account, you can do this: <b>LeadCreate.create(contact)</b>
+If you can see the list of leads you have you can do this: <tt>LeadCreate.list_leads</tt>
+If you can save a new lead in your salesforce account, you can do this: <tt>LeadCreate.create(contact)</tt>
 
 The object contact need to be this atributes: <b>name, last_name, email, company, phone, website, job_title</b>
