@@ -1,21 +1,42 @@
 == README
 
-This project was building as a way to study ROR and his technologies.
-
 This project uses:
 
-* Ruby: 2.0.0
+* Ruby: 2.0
 
-* Rails: 4.2.1
+* Rspec: 3.3
 
-* Devise: 3.5.1
+* factory_girl_rails: 4.5
 
-* Bootstrap-sass: 3.2.0
+* databasedotcom: 1.3
 
-* Rspec-rails: 3.3.2
+lead_create is a gem to enable ruby applications to integrate with the SalesForce Leads.
+If you use bundler, simply list it in your Gemfile, like so:
 
-* factory_girl_rails: 4.5.0
+gem 'databasedotcom'
 
-* Database: Sqlite3
+If you don't use bundler, install it by hand:
 
-This application are hosted in microbloglucena.herokuapp.com
+gem install databasedotcom
+
+After to install a GEM need create a file named onfig/databasedotcom.yml
+In databasedotcom.yml you need insert the configuration, like so:
+host: login.salesforce.com        # Use test.salesforce.com for sandbox
+client_secret: 1234567890         # This is the Consumer Secret from Salesforce
+client_id: somebigidthinghere     # This is the Consumer Key from Salesforce
+sobject_module: SFDC_Models       # See below for details on using modules
+debugging: true                   # Can be useful while developing
+username: me@mycompany.com
+password: mypasswordplusmysecuritytoken
+
+After set file databasedotcom.yml, you can use the GEM.
+
+HOW TO USE?
+
+If you can see the list of leads you have you can do this: LeadCreate.list_leads
+If you can save a new lead in your salesforce account, you can do this: LeadCreate.create(contact)
+
+The object contact need to be this atributes: name, last_name, email, company, phone, website, job_title
+
+
+
