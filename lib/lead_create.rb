@@ -1,36 +1,47 @@
 class LeadCreate
   def self.create(contato)
-    lead = get_lead_object
-    @lead = lead.new
-    @lead = load_new_lead(contato)
-    if @lead.save
-      contato.name + ' successfully added'
+    connect
+    load_new_lead(contato)
+    if(@lead.all.select { |lead| lead.FirstName == @new_lead.FirstName }.empty?)
+      if @new_lead.save
+        contato.name + ' successfully added'
+      end
+    else
+      'This contact has already been added'
     end
   end
 
   def self.list_leads
-    lead = get_lead
+    connect
+    lead = take_lead
     lead.all
   end
 
   private
-  def get_lead_object
-    client = Databasedotcom::Client.new('config/databasedotcom.yml')
-    client.authenticate :username => 'matheuslucena@gmail.com', :password => 'slayer666DT0tilUUmpLca7X5kWKGCKDf'
-    client.materialize('Lead')
+  def self.connect
+    @client = Databasedotcom::Client.new('config/databasedotcom.yml')
+    file = YAML.load_file('config/databasedotcom.yml')
+    @client.authenticate :username => file['username'], :password => file['password']
   end
 
-  def load_new_lead(contato)
-    user = client.materialize('User')
-    @lead.OwnerId = user.first.Id
-    @lead.FirstName = contato.name
-    @lead.LastName = contato.last_name
-    @lead.Email = contato.email
-    @lead.Company = contato.company
-    @lead.Title = contato.job_title
-    @lead.Phone = contato.phone
-    @lead.Website = contato.website
-    @lead.IsConverted = false
-    @lead.IsUnreadByOwner = true
+  def self.take_lead
+    connect
+    @client.materialize('Lead')
+  end
+
+  def self.load_new_lead(contato)
+    @lead = @client.materialize('Lead')
+    @new_lead = @lead.new
+    user = @client.materialize('User')
+    @new_lead.OwnerId = user.first.Id
+    @new_lead.FirstName = contato.name
+    @new_lead.LastName = contato.last_name
+    @new_lead.Email = contato.email
+    @new_lead.Company = contato.company
+    @new_lead.Title = contato.job_title
+    @new_lead.Phone = contato.phone
+    @new_lead.Website = contato.website
+    @new_lead.IsConverted = false
+    @new_lead.IsUnreadByOwner = true
   end
 end
