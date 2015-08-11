@@ -10,7 +10,7 @@
 
 * databasedotcom: 1.3
 
-* Version: 1.0.0
+* Version: 1.0.1
 
 lead_create is a gem to enable ruby applications to integrate with the SalesForce Leads.
 
